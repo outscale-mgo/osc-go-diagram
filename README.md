@@ -8,4 +8,4 @@ cd go-diagrams
 dot -Tpng app.dot > app.png
 ```
 
-![app.png](example)
+![example](app.png)
