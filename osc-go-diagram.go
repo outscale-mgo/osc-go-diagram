@@ -4,6 +4,8 @@ import (
 	"log"
 	"github.com/blushft/go-diagrams/diagram"
 	"github.com/blushft/go-diagrams/nodes/outscale"
+	"github.com/blushft/go-diagrams/nodes/programming"
+	"github.com/blushft/go-diagrams/nodes/generic"
 	"github.com/blushft/go-diagrams/nodes/apps"
 )
 
@@ -23,8 +25,8 @@ func main() {
 		Label("Service Layer").
 		Add(
 			outscale.Compute.Compute(diagram.NodeLabel("Server 1")),
-			outscale.Compute.Compute(diagram.NodeLabel("Server 2")),
-			outscale.Compute.Compute(diagram.NodeLabel("Server 3")),
+			programming.Language.Bash(diagram.NodeLabel("Server 2")),
+			generic.Compute.Rack(diagram.NodeLabel("Server 3")),
 		).
 		ConnectAllFrom(lb.ID(), diagram.Forward()).
 		ConnectAllTo(cache.ID(), diagram.Forward())
